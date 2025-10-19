@@ -302,3 +302,101 @@ git clone https://github.com/ShuaibDoe/airbnb-clone-project.git
 - Gives administrators control over the platform’s data and activity.
 - Admins can manage users, monitor property listings, and review transactions.
 - This ensures compliance with policies and maintains the integrity of the system.
+
+---
+
+## API Security
+
+- Security is a core part of the AirBnB Clone Project architecture.
+- Since the platform handles sensitive data such as user credentials, payment information, and booking details, implementing robust API security measures is essential to protect users and ensure the integrity of the system.
+
+## 1. Authentication
+
+#Purpose:
+- Authentication ensures that only registered users can access the system by verifying their identity before granting access.
+
+#Implementation:
+
+-JSON Web Tokens (JWT) or session-based authentication will be used to validate users.
+-Tokens will be securely stored and refreshed to maintain user sessions.
+
+#Why It Matters:
+- Protects user accounts from unauthorized access and ensures that private data (e.g., personal info, booking history) is only accessible to the rightful owner.
+
+## 2. Authorization
+
+#Purpose:
+- Authorization determines what actions a user can perform after they are authenticated.
+
+#Implementation:
+
+-Role-based access control (RBAC) will define user roles (Admin, Host, Guest).
+-Hosts can manage their listings, Guests can book properties, and Admins oversee system operations.
+
+#Why It Matters:
+- Prevents users from accessing or modifying data that doesn’t belong to them (e.g., a guest editing another host’s property).
+
+## 3. Rate Limiting
+
+#Purpose:
+- Rate limiting controls how many requests a user or client can make to the API in a specific time frame.
+
+#Implementation:
+
+-Middleware or API gateway rules will limit requests per minute/hour.
+-Requests exceeding limits will be temporarily blocked.
+
+#Why It Matters:
+- Prevents denial-of-service (DoS) attacks, abuse of the API, and server overload.
+
+## 4. Data Validation and Sanitization
+
+#Purpose:
+- Ensures that all incoming data is clean, valid, and safe before processing or storing it.
+
+#Implementation:
+
+-Validation middleware to check data types, formats, and required fields.
+-Input sanitization to prevent injection attacks (e.g., SQL injection, XSS).
+
+#Why It Matters:
+- Protects the system from malicious inputs and ensures data integrity across the database.
+
+## 5. Secure Communication
+
+#Purpose:
+- Guarantees that all data transmitted between the client and server is encrypted.
+
+#Implementation:
+
+-Enforce HTTPS for all requests.
+-Use SSL/TLS certificates for secure data transfer.
+
+#Why It Matters:
+- Prevents attackers from intercepting sensitive data such as login credentials or payment details during transmission.
+
+## 6. Payment Security
+
+#Purpose:
+- Safeguards financial transactions and user payment information.
+
+#Implementation:
+
+-Use third-party payment gateways (e.g., Stripe, PayPal) with secure APIs.
+-Never store raw card details in the system.
+
+#Why It Matters:
+- Protects users from fraud and ensures compliance with payment industry security standards (PCI DSS).
+
+## 7. Logging and Monitoring
+
+#Purpose:
+- Tracks API usage, detects unusual activity, and identifies security incidents early.
+
+#Implementation:
+
+-Centralized logging for all API requests and responses.
+-Alerts for failed login attempts or unauthorized access patterns.
+
+#Why It Matters:
+- Enhances visibility, helps in early detection of attacks, and supports auditing and debugging.
