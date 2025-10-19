@@ -149,3 +149,102 @@ git clone https://github.com/ShuaibDoe/airbnb-clone-project.git
 -Pytest / Unittest: Frameworks for automated testing of backend logic and API endpoints.
 -Postman: Used to test and debug RESTful APIs during development.
 -Selenium / Cypress: Tools for end-to-end testing of frontend user flows.
+
+---
+
+## Database Design
+
+- The database for the AirBnB Clone Project is structured to manage users, properties, bookings, reviews, and payments efficiently.
+- It follows a relational model, ensuring data integrity and enabling clear relationships between entities.
+
+## 1. Users
+
+- Represents all individuals who interact with the platform — both guests and hosts.
+
+#Key Fields:
+
+-id – Primary Key, unique identifier for each user
+-name – Full name of the user
+-email – Unique email address (used for authentication)
+-password_hash – Encrypted user password
+-role – Defines whether the user is a host or guest
+
+#Relationships:
+
+- A user (host) can list multiple properties.
+- A user (guest) can make multiple bookings and write reviews.
+
+## 2. Properties
+
+- Represents accommodations listed by hosts.
+
+#Key Fields:
+
+-id – Primary Key
+-host_id – Foreign Key → Users(id) (property owner)
+-title – Property name or headline
+-description – Detailed description of the property
+-price_per_night – Cost per night for booking
+
+#Relationships:
+
+- A property belongs to one host (user).
+- A property can have many bookings and reviews.
+
+## 3. Bookings
+
+- Represents reservations made by guests for specific properties.
+
+#Key Fields:
+
+-id – Primary Key
+-user_id – Foreign Key → Users(id) (guest who booked)
+-property_id – Foreign Key → Properties(id)
+-check_in_date – Start date of the stay
+-check_out_date – End date of the stay
+
+#Relationships:
+
+- A booking belongs to one user and one property.
+- A booking may have one payment record.
+
+## 4. Reviews
+
+- Stores feedback provided by guests about their stays.
+
+#Key Fields:
+
+-id – Primary Key
+-user_id – Foreign Key → Users(id)
+-property_id – Foreign Key → Properties(id)
+-rating – Numeric score (e.g., 1–5)
+-comment – Text feedback from the guest
+
+#Relationships:
+
+- A user can post multiple reviews.
+- Each review belongs to one property.
+
+## 5. Payments
+
+- Tracks financial transactions related to bookings.
+
+#Key Fields:
+
+-id – Primary Key
+-booking_id – Foreign Key → Bookings(id)
+-amount – Total amount paid
+-payment_status – Status (e.g., pending, completed, failed)
+-payment_date – Date of transaction
+
+#Relationships:
+
+- Each payment is linked to one booking.
+- A booking can have one or more payment attempts.
+
+## Entity Relationships Summary
+#Relationship Type	Description#
+1 One-to-Many	A user can have multiple properties.
+2 One-to-Many	A property can have multiple bookings and reviews.
+3 One-to-One	A booking can have one payment.
+4 Many-to-One	Each booking belongs to one user and one property.
