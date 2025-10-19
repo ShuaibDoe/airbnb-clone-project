@@ -248,3 +248,57 @@ git clone https://github.com/ShuaibDoe/airbnb-clone-project.git
 2 One-to-Many	A property can have multiple bookings and reviews.
 3 One-to-One	A booking can have one payment.
 4 Many-to-One	Each booking belongs to one user and one property.
+
+---
+
+## Feature Breakdown
+
+- The AirBnB Clone Project is designed to replicate the key functionalities of the real AirBnB platform, allowing users to list, discover, and book properties.
+- Each feature works together to provide a seamless user experience for both hosts and guests.
+
+# 1. User Management
+
+- Handles user registration, authentication, and profile management.
+- Users can sign up as hosts (to list properties) or guests (to book stays).
+- This feature ensures secure login, session management, and role-based access control.
+
+# 2. Property Management
+
+- Allows hosts to list, update, and remove their properties.
+- Each property includes details such as title, description, location, price per night, and available dates.
+- This feature enables easy management of property data and visibility on the platform.
+
+# 3. Booking System
+
+- Enables guests to view available properties and make bookings for specific dates.
+- It includes features for date validation, price calculation, and reservation confirmation.
+- This module ensures that bookings are tracked and managed in real time to prevent double-booking.
+
+# 4. Payment Processing
+
+- Facilitates secure online payments for bookings using integrated payment gateways.
+- It records payment details, tracks transaction status, and ensures that both guests and hosts receive confirmations.
+- This feature adds reliability and trust to the booking process.
+
+# 5. Review & Rating System
+
+- Allows guests to leave feedback on properties after their stay.
+- Each review includes a star rating and a written comment, helping future guests make informed decisions.
+- This feature promotes quality and accountability among hosts.
+
+# 6. Search & Filter Functionality
+
+- Enables users to search for properties using filters such as location, price range, property type, or availability dates.
+- It ensures that users can quickly find listings that match their preferences, improving overall usability.
+
+# 7. Responsive User Interface
+
+- Provides an intuitive and mobile-friendly experience using modern frontend technologies.
+- Ensures smooth navigation and consistent performance across desktop and mobile devices.
+- This feature enhances accessibility and engagement for all users.
+
+# 8. Admin Dashboard
+
+- Gives administrators control over the platform’s data and activity.
+- Admins can manage users, monitor property listings, and review transactions.
+- This ensures compliance with policies and maintains the integrity of the system.
