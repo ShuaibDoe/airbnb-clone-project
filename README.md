@@ -400,3 +400,41 @@ git clone https://github.com/ShuaibDoe/airbnb-clone-project.git
 
 #Why It Matters:
 - Enhances visibility, helps in early detection of attacks, and supports auditing and debugging.
+
+---
+
+## CI/CD Pipeline
+
+- The Continuous Integration and Continuous Deployment (CI/CD) pipeline is a crucial part of the AirBnB Clone Project development workflow.
+- It automates the process of building, testing, and deploying the application — ensuring that every code change moves smoothly from development to production with minimal manual intervention.
+
+## What is CI/CD?
+
+- Continuous Integration (CI) is the practice of automatically integrating code changes into a shared repository and running tests to detect issues early.
+- Continuous Deployment (CD) automates the release process, ensuring that tested and verified code is deployed to the live environment seamlessly.
+
+- Together, they help maintain code quality, reduce deployment risks, and enable faster, more reliable software delivery.
+
+# Why CI/CD is Important
+
+-Automation: Reduces manual steps in building, testing, and deployment.
+-Consistency: Ensures that all environments (development, staging, production) run identical code.
+-Quality Assurance: Detects bugs early through automated testing before changes reach production.
+-Speed: Enables frequent, reliable updates without downtime or errors.
+-Team Collaboration: Improves visibility and coordination across developers working on the same codebase.
+
+# Tools Used in the CI/CD Pipeline
+
+-GitHub Actions: Automates workflows for building, testing, and deploying code directly from GitHub.
+-Docker: Containerizes the application to ensure consistent environments across all stages.
+-Render / Heroku / AWS: Cloud hosting services used for deploying the application automatically after successful builds.
+-Pytest / Unittest: Integrated into the CI workflow for automated testing of backend logic.
+-Linting Tools (e.g., Flake8): Checks code style and formatting to maintain consistency and quality.
+
+# Example CI/CD Workflow (Simplified)
+
+- Developer pushes code to the GitHub repository.
+- GitHub Actions triggers a CI workflow that runs tests and linting.
+- If tests pass, a Docker image is built and pushed to the container registry.
+- The CD pipeline automatically deploys the new version to the staging or production environment.
+- Monitoring tools ensure successful deployment and system stability.
